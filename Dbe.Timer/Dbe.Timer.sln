@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dbe.Timer.SL", "Dbe.Timer.SL\Dbe.Timer.SL.csproj", "{F5250A81-2054-481B-978D-779E9026DD0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dbe.Timer.SL.Web", "Dbe.Timer.SL.Web\Dbe.Timer.SL.Web.csproj", "{40DFF155-C37B-418E-8CD8-4685DA7DB3A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{7FF88F36-BE7C-4F08-808D-B0938BBDFE7E}"
+	ProjectSection(SolutionItems) = preProject
+		Components\GalaSoft.MvvmLight.Extras.SL4.dll = Components\GalaSoft.MvvmLight.Extras.SL4.dll
+		Components\GalaSoft.MvvmLight.SL4.dll = Components\GalaSoft.MvvmLight.SL4.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5250A81-2054-481B-978D-779E9026DD0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5250A81-2054-481B-978D-779E9026DD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5250A81-2054-481B-978D-779E9026DD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5250A81-2054-481B-978D-779E9026DD0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40DFF155-C37B-418E-8CD8-4685DA7DB3A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DFF155-C37B-418E-8CD8-4685DA7DB3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DFF155-C37B-418E-8CD8-4685DA7DB3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DFF155-C37B-418E-8CD8-4685DA7DB3A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

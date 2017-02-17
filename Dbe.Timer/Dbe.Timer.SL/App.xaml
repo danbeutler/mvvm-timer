@@ -1,0 +1,16 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:h="clr-namespace:Dbe.Timer.SL.Helpers"
+             x:Class="Dbe.Timer.SL.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <vm:ViewModelLocator xmlns:vm="clr-namespace:Dbe.Timer.SL.Helpers" x:Key="Locator" />
+                    <h:NumberToColorConverter x:Key="NumberToColor" />
+                    <h:BoolToVisibilityConverter x:Key="BoolToVisibility" TrueValue="Visible" FalseValue="Collapsed" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

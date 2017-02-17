@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Dbe.Timer.SL.Views.TimerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.SL4"
+             xmlns:ctl="clr-namespace:Dbe.Timer.SL.Controls"
+             mc:Ignorable="d"
+             Height="340" Width="546" 
+             DataContext="{Binding Timers, Source={StaticResource Locator}}">
+    
+    <Grid Width="Auto">
+        <sdk:DataGrid x:Name="dataGrid1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" ItemsSource="{Binding Path=TimersCollection}" AutoGenerateColumns="False">
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="/Dbe.Timer.SL;component/Assets/Images/search-25.png" Height="20" Cursor="Hand" ToolTipService.ToolTip="{Binding Path=Description}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                                        <cmd:EventToCommand Command="{Binding Path=Timers.DescriptionDetailsMouseLeftButtonUp, Source={StaticResource Locator}}"
+                                                            MustToggleIsEnabledValue="True" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Image>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" ctl:DataGrid.ColumnHeader="{Binding Path=Timers.Localization.Description, Source={StaticResource Locator}}" Binding="{Binding Path=Description}" ctl:DataGrid.ColumnVisibility="{Binding Path=Timers.DescriptionVisible, Source={StaticResource Locator}, Converter={StaticResource BoolToVisibility}}" Width="150" />
+                <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" ctl:DataGrid.ColumnHeader="{Binding Path=Timers.Localization.StartDate, Source={StaticResource Locator}}" Binding="{Binding Path=StartDate, ConverterCulture=de-CH}" Width="140" />
+                <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" ctl:DataGrid.ColumnHeader="{Binding Path=Timers.Localization.Delta, Source={StaticResource Locator}}" Binding="{Binding Path=Delta}" Width="120" IsReadOnly="True" />
+                <sdk:DataGridTemplateColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" ctl:DataGrid.ColumnHeader="{Binding Path=Timers.Localization.Color, Source={StaticResource Locator}}" SortMemberPath="Color">
+                    <sdk:DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <sdk:Label Content="{Binding Path=Color}" Background="{Binding Color, Converter={StaticResource NumberToColor}}"></sdk:Label>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+    </Grid>
+</UserControl>
